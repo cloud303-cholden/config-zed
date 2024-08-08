@@ -31,5 +31,9 @@
   "terminal": {
     "font_family": "CaskaydiaCove Nerd Font Mono"
   },
-  "soft_wrap": "editor_width"
+  "soft_wrap": "editor_width",
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  }
 }

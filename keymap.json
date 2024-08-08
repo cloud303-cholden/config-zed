@@ -11,7 +11,17 @@
       "shift-q": "pane::CloseActiveItem",
       "alt-h": "pane::GoBack",
       "alt-l": "pane::GoForward",
-      "alt-b": "tab_switcher::Toggle"
+      "shift-h": "pane::ActivatePrevItem",
+      "shift-l": "pane::ActivateNextItem",
+      "ctrl-.": "zed::OpenKeymap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-b": "tab_switcher::Toggle",
+      // "alt-v": ["tab_switcher::Toggle", { "select_last": true }]
+      "alt-v": "menu::SelectPrev"
     }
   },
   {
@@ -20,6 +30,20 @@
       "j k": ["workspace::SendKeystrokes", "escape"],
       "ctrl-j": "editor::ContextMenuNext",
       "ctrl-k": "editor::ContextMenuPrev"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "6 j"],
+      "ctrl-u": ["workspace::SendKeystrokes", "6 k"]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "j j j j j j"],
+      "ctrl-u": ["workspace::SendKeystrokes", "k k k k k k"]
     }
   }
 ]
