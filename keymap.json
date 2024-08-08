@@ -1,0 +1,25 @@
+[
+  {
+    "bindings": {
+      "alt-f alt-t": "file_finder::Toggle",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-w": "workspace::Save",
+      "alt-q": "zed::Quit",
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrev",
+      "alt-x": "workspace::NewCenterTerminal",
+      "shift-q": "pane::CloseActiveItem",
+      "alt-h": "pane::GoBack",
+      "alt-l": "pane::GoForward",
+      "alt-b": "tab_switcher::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": ["workspace::SendKeystrokes", "escape"],
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrev"
+    }
+  }
+]
