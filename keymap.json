@@ -17,16 +17,24 @@
   {
     "context": "Editor && vim_mode != insert",
     "bindings": {
-      "shift-h": "pane::ActivatePrevItem",
-      "shift-l": "pane::ActivateNextItem"
+      "g j": "editor::GoToDiagnostic",
+      "g k": "editor::GoToPrevDiagnostic",
+      "g f": "buffer_search::Deploy",
+      "shift-h": "pane::ActivatePrevItem", // go to left tab
+      "shift-l": "pane::ActivateNextItem" // go to right tab
     }
   },
   {
     "context": "Workspace",
     "bindings": {
       "alt-b": "tab_switcher::Toggle",
-      // "alt-v": ["tab_switcher::Toggle", { "select_last": true }]
       "alt-v": "menu::SelectPrev"
+    }
+  },
+  {
+    "context": "Workspace && vim_mode != insert",
+    "bindings": {
+      "g p f": "pane::DeploySearch"
     }
   },
   {
@@ -40,10 +48,19 @@
   {
     "context": "Editor",
     "bindings": {
+      "ctrl-shift-h": "vim::WindowTop", // shift-h remap conflicts with this action
       "ctrl-d": ["workspace::SendKeystrokes", "6 j"],
       "ctrl-u": ["workspace::SendKeystrokes", "6 k"],
-      "alt-g alt-j": "editor::GoToDiagnostic",
-      "alt-g alt-k": "editor::GoToPrevDiagnostic"
+      "alt-d": "vim::ScrollDown",
+      "alt-u": "vim::ScrollUp", // ctrl-shift-u doesn't work for some reason
+      "alt-,": [
+        "workspace::SendKeystrokes",
+        "escape m s ctrl-shift-h m t ' t z t ` s shift-a , escape ' t z t ` s"
+      ], // add `,` to end of line and return cursor position
+      "alt-;": [
+        "workspace::SendKeystrokes",
+        "escape m s ctrl-shift-h m t ' t z t ` s shift-a ; escape ' t z t ` s"
+      ] // add `;` to end of line and return cursor position
     }
   },
   {
@@ -54,6 +71,14 @@
       "z c": "project_panel::CollapseAllEntries",
       "a": "project_panel::NewFile",
       "l": "project_panel::OpenPermanent"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g space": "editor::OpenExcerpts", // open search result
+      "ctrl-j": "search::SelectNextMatch", // select next search result
+      "ctrl-k": "search::SelectPrevMatch" // select previous search result
     }
   }
 ]
