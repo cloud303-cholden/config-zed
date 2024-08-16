@@ -46,6 +46,7 @@
     }
   },
   "features": {
+    // https://github.com/zed-industries/zed/issues/15653#issuecomment-2269047250
     "inline_completion_provider": "supermaven"
   }
 }
