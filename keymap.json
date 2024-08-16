@@ -1,25 +1,26 @@
 [
   {
     "bindings": {
+      // NB: Make sure there aren't any `shift-` bindings here.
       "alt-f alt-t": "file_finder::Toggle",
       "alt-e": "project_panel::ToggleFocus",
       "alt-w": "workspace::Save",
-      "alt-q": "zed::Quit",
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrev",
+      "ctrl-q": "pane::CloseActiveItem",
       "alt-x": "workspace::NewCenterTerminal",
-      "shift-q": "pane::CloseActiveItem",
       "alt-h": "pane::GoBack",
       "alt-l": "pane::GoForward",
       "ctrl-.": "zed::OpenKeymap"
     }
   },
   {
-    "context": "Editor && vim_mode != insert",
+    "context": "Editor && vim_mode != insert && VimControl",
     "bindings": {
       "g j": "editor::GoToDiagnostic",
       "g k": "editor::GoToPrevDiagnostic",
       "g f": "buffer_search::Deploy",
+      "shift-q": "pane::CloseActiveItem",
       "shift-h": "pane::ActivatePrevItem", // go to left tab
       "shift-l": "pane::ActivateNextItem" // go to right tab
     }
