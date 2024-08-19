@@ -45,6 +45,7 @@
       }
     }
   },
+  // "show_inline_completions": false, supermaven fails to init
   "features": {
     // https://github.com/zed-industries/zed/issues/15653#issuecomment-2269047250
     "inline_completion_provider": "supermaven"

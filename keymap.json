@@ -52,6 +52,7 @@
       "ctrl-shift-h": "vim::WindowTop", // shift-h remap conflicts with this action
       "ctrl-d": ["workspace::SendKeystrokes", "6 j"],
       "ctrl-u": ["workspace::SendKeystrokes", "6 k"],
+      // "alt-o": "editor::ShowInlineCompletion",
       "alt-d": "vim::ScrollDown",
       "alt-u": "vim::ScrollUp", // ctrl-shift-u doesn't work for some reason
       "alt-,": [
@@ -80,6 +81,21 @@
       "g space": "editor::OpenExcerpts", // open search result
       "ctrl-j": "search::SelectNextMatch", // select next search result
       "ctrl-k": "search::SelectPrevMatch" // select previous search result
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "alt-l": "editor::ConfirmCompletion",
+      "enter": null,
+      "tab": null
+    }
+  },
+  {
+    "context": "Editor && inline_completion && !showing_completions",
+    "bindings": {
+      "alt-l": "editor::AcceptInlineCompletion",
+      "tab": null
     }
   }
 ]
