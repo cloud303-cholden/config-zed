@@ -20,12 +20,83 @@
     "metrics": false
   },
   "vim_mode": true,
-  "ui_font_size": 20,
-  "buffer_font_size": 20,
+  "ui_font_size": 18,
+  "buffer_font_size": 18,
   "theme": {
     "mode": "system",
     "light": "Nord Light",
     "dark": "Nord"
+  },
+  "experimental.theme_overrides": {
+    // "editor.active_line_number": "#A3B993",
+    "editor.active_line_number": "#d99f8c",
+    "editor.foreground": "#d8dee9cc",
+    "text": "#d8dee9",
+    // "text.muted": "#d8dee966",
+    "text.muted": "#616E88",
+    "modified": "#efd5a2",
+    // "modified": "#ebcb8b",
+    "predictive": "#616E88",
+    "error": "#bf616a",
+    "error.background": "#bf616a",
+    "error.border": "#4d586c",
+    "search.match_background": "#242933",
+    "syntax": {
+      "function": {
+        "color": "#0FA3B1"
+      },
+      "variable": {
+        // "color": "#67809a"
+        "color": "#8FBCBB"
+      },
+      "string": {
+        "color": "#A3B993"
+      },
+      "keyword": {
+        // "color": "#d08770",
+        // "color": "#d99f8c",
+        // "font_style": "italic"
+        "color": "#4d586c",
+        "font_style": "italic",
+        "font_weight": 900
+      },
+      "type": {
+        // "color": "#616E88",
+        // "color": "#4d586c",
+        // "color": "#d99f8c",
+        "font_style": "italic",
+        "font_weight": 900
+      }
+    },
+    "players": [
+      {
+        // "background": "#eceff4",
+        "background": "#2e3440",
+        // "cursor": "#A3B993",
+        "cursor": "#d99f8c",
+        "selection": "#3b4252"
+      },
+      {
+        "background": "#d08770",
+        "cursor": "#d08770",
+        "selection": "#d087703d"
+      },
+      {
+        "background": "#A3B993",
+        "cursor": "#A3B993",
+        "selection": "#A3B9933d"
+      },
+      {
+        "background": "#b48ead",
+        "cursor": "#b48ead",
+        "selection": "#b48ead3d"
+      },
+      {
+        "background": "#d08770",
+        "cursor": "#d08770",
+        "selection": "#d087703d"
+      }
+    ]
   },
   "ui_font_family": "CaskaydiaCove Nerd Font Mono",
   "buffer_font_family": "CaskaydiaCove Nerd Font Mono",
@@ -38,37 +109,25 @@
     "git_status": true
   },
   "format_on_save": "on",
-  "lsp": {
-    // "rust-analyzer": {
-    //   "binary": {
-    //     "path_lookup": true
-    //   }
-    // },
-    "vtsls": {
-      "initialization_options": {
-        "typescript": {
-          "tsserver": {
-            "experimental": {
-              "enableProjectDiagnostics": true
-            }
-          }
-        }
+  "languages": {
+    "Svelte": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     },
-    "svelte-language-server": {
-      "initialization_options": {
-        "configuration": {
-          "typescript": {
-            "tsserver": {
-              "experimental": {
-                "enableProjectDiagnostics": true
-              }
-            }
-          }
-        }
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     }
   },
+  // "lsp": {
+  //   "rust-analyzer": {
+  //     "binary": {
+  //       "path_lookup": true
+  //     }
+  //   }
+  // },
   // "show_inline_completions": false, supermaven fails to init
   "features": {
     // https://github.com/zed-industries/zed/issues/15653#issuecomment-2269047250
