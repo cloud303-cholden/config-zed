@@ -11,8 +11,8 @@
     "version": "2",
     "default_open_ai_model": null,
     "default_model": {
-      "provider": "ollama",
-      "model": "mistral:latest"
+      "provider": "openai",
+      "model": "gpt-4-turbo"
     }
   },
   "telemetry": {
