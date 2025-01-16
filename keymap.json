@@ -2,17 +2,18 @@
   {
     "bindings": {
       // NB: Make sure there aren't any `shift-` bindings here.
-      "alt-f alt-t": "file_finder::Toggle",
+      "alt-f": "file_finder::Toggle",
       "alt-e": "project_panel::ToggleFocus",
       "alt-w": "workspace::Save",
-      "ctrl-j": "menu::SelectNext",
-      "ctrl-k": "menu::SelectPrev",
+      "alt-j": "menu::SelectNext",
+      "alt-k": "menu::SelectPrev",
       "ctrl-q": "pane::CloseActiveItem",
       "alt-x": "workspace::NewCenterTerminal",
       "alt-h": "pane::GoBack",
       "alt-l": "pane::GoForward",
+      "alt-;": "editor::Cancel", // close code completions or inline AI completion
       "ctrl-.": "zed::OpenKeymap",
-      "alt-;": "editor::Cancel" // close code completions or inline AI completion
+      "ctrl-,": "zed::OpenSettings"
     }
   },
   {
@@ -98,6 +99,14 @@
       "alt-k": "editor::ContextMenuPrev", // select previous code completion
       "alt-j": "editor::ContextMenuNext", // select next code completion
       "alt-g": "editor::ContextMenuFirst" // select first code completion
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "alt-k": "editor::ContextMenuPrev", // select previous completion
+      "alt-j": "editor::ContextMenuNext", // select next completion
+      "alt-g": "editor::ContextMenuFirst" // select first completion
     }
   }
 ]

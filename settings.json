@@ -123,11 +123,27 @@
     "TypeScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
+      },
+      "language_servers": ["!deno", "vtsls", "eslint"]
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        // For TypeScript:
+        "typescript": { "tsserver": { "maxTsServerMemory": 16184 } },
+        // For JavaScript:
+        "javascript": { "tsserver": { "maxTsServerMemory": 16184 } }
       }
     }
-    // "Rust": {
-    //   "show_inline_completions": false
-    // }
+  },
+  "show_inline_completions": false,
+  "features": {
+    // https://github.com/zed-industries/zed/issues/15653#issuecomment-2269047250
+    "inline_completion_provider": "supermaven"
+  },
+  "file_types": {
+    "Dockerfile": ["Dockerfile.*"])
   }
   // "show_completions_on_input": false,
   // "features": {
