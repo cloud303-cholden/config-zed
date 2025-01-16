@@ -28,14 +28,16 @@
     "dark": "Nord"
   },
   "experimental.theme_overrides": {
-    // "editor.active_line_number": "#A3B993",
     "editor.active_line_number": "#d99f8c",
     "editor.foreground": "#d8dee9cc",
+    "panel.background": "#242933ff",
+    "tab_bar.background": "#242933ff",
+    "tab.inactive_background": "#242933ff",
+    "toolbar.background": "#242933ff",
+    "title_bar.background": "#242933ff",
     "text": "#d8dee9",
-    // "text.muted": "#d8dee966",
     "text.muted": "#616E88",
     "modified": "#efd5a2",
-    // "modified": "#ebcb8b",
     "predictive": "#616E88",
     "error": "#bf616a",
     "error.background": "#bf616a",
@@ -43,27 +45,30 @@
     "search.match_background": "#242933",
     "syntax": {
       "function": {
-        "color": "#0FA3B1"
+        "color": "#B48EAD"
       },
       "variable": {
-        // "color": "#67809a"
-        "color": "#8FBCBB"
+        "color": "#ECEFF4"
       },
       "string": {
         "color": "#A3B993"
       },
+      "property": {
+        "color": "#D8DEE9"
+      },
+      "constant": {
+        "font_weight": 900
+      },
       "keyword": {
-        // "color": "#d08770",
-        // "color": "#d99f8c",
-        // "font_style": "italic"
         "color": "#4d586c",
         "font_style": "italic",
         "font_weight": 900
       },
+      "punctuation.bracket": {
+        "color": "#8FBCBB"
+      },
       "type": {
-        // "color": "#616E88",
-        // "color": "#4d586c",
-        // "color": "#d99f8c",
+        "color": "#88C0D0",
         "font_style": "italic",
         "font_weight": 900
       }
@@ -120,17 +125,12 @@
         "source.fixAll.eslint": true
       }
     }
-  },
-  // "lsp": {
-  //   "rust-analyzer": {
-  //     "binary": {
-  //       "path_lookup": true
-  //     }
-  //   }
-  // },
-  // "show_inline_completions": false, supermaven fails to init
-  "features": {
-    // https://github.com/zed-industries/zed/issues/15653#issuecomment-2269047250
-    "inline_completion_provider": "supermaven"
+    // "Rust": {
+    //   "show_inline_completions": false
+    // }
   }
+  // "show_completions_on_input": false,
+  // "features": {
+  //   "inline_completion_provider": "supermaven"
+  // }
 }

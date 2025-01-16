@@ -11,7 +11,8 @@
       "alt-x": "workspace::NewCenterTerminal",
       "alt-h": "pane::GoBack",
       "alt-l": "pane::GoForward",
-      "ctrl-.": "zed::OpenKeymap"
+      "ctrl-.": "zed::OpenKeymap",
+      "alt-;": "editor::Cancel" // close code completions or inline AI completion
     }
   },
   {
@@ -52,17 +53,10 @@
       "ctrl-shift-h": "vim::WindowTop", // shift-h remap conflicts with this action
       "ctrl-d": ["workspace::SendKeystrokes", "6 j"],
       "ctrl-u": ["workspace::SendKeystrokes", "6 k"],
-      // "alt-o": "editor::ShowInlineCompletion",
+      "alt-o": "editor::ShowCompletions", // show code completions
+      "alt-i": "editor::ShowInlineCompletion", // show inline AI completion
       "alt-d": "vim::ScrollDown",
-      "alt-u": "vim::ScrollUp", // ctrl-shift-u doesn't work for some reason
-      "alt-,": [
-        "workspace::SendKeystrokes",
-        "escape m s ctrl-shift-h m t ' t z t ` s shift-a , escape ' t z t ` s"
-      ], // add `,` to end of line and return cursor position
-      "alt-;": [
-        "workspace::SendKeystrokes",
-        "escape m s ctrl-shift-h m t ' t z t ` s shift-a ; escape ' t z t ` s"
-      ] // add `;` to end of line and return cursor position
+      "alt-u": "vim::ScrollUp" // ctrl-shift-u doesn't work for some reason
     }
   },
   {
@@ -86,16 +80,24 @@
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "alt-l": "editor::ConfirmCompletion",
-      "enter": null,
-      "tab": null
+      "alt-l": "editor::ConfirmCompletion", // confirm code completion
+      "enter": null, // allow entering new lines while showing completions
+      "tab": null // allow tabbing while showing completions
     }
   },
   {
     "context": "Editor && inline_completion && !showing_completions",
     "bindings": {
-      "alt-l": "editor::AcceptInlineCompletion",
-      "tab": null
+      "alt-l": "editor::AcceptInlineCompletion", // confirm inline AI completion
+      "tab": null // allow tabbing while showing inline completion
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "alt-k": "editor::ContextMenuPrev", // select previous code completion
+      "alt-j": "editor::ContextMenuNext", // select next code completion
+      "alt-g": "editor::ContextMenuFirst" // select first code completion
     }
   }
 ]
